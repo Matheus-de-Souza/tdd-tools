@@ -1,14 +1,18 @@
 module.exports = {
-	sum: function () {
-		
+	sum: function (a, b) {
+		return a + b;
 	}, 
-	sub: function () {
-		
+	sub: function (a, b) {
+		return a - b; 
 	}, 
-	multi: function () {
-		
+	multi: function (a, b) {
+		return a * b;
 	}, 
-	div: function () {
-		
+	div: function (a, b) {
+		if (b === 0) { 
+			return 'Não é possível divisão por zero!';
+		} else {
+			return a / b;
+		}
 	}, 
 }
