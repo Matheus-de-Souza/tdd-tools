@@ -1,0 +1,30 @@
+{
+  "name": "tdd-tools",
+  "version": "1.0.0",
+  "description": "This project was created to test TDD Frameworks and tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Matheus-de-Souza/tdd-tools.git"
+  },
+  "keywords": [
+    "tdd",
+    "testing",
+    "frameworks"
+  ],
+  "author": "Matheus de Souza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Matheus-de-Souza/tdd-tools/issues"
+  },
+  "homepage": "https://github.com/Matheus-de-Souza/tdd-tools#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.18.1"
+  }
+}
