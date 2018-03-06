@@ -1,32 +1,31 @@
 const { expect } = require('chai');
+const calc = require('../src/main.js')
 
-describe('Main', function () {
+describe('Calc', function () {
+	describe('Smoke tests', function () {
+		
+		it('should exist the calc lib', function () {
+			expect(calc).to.exist;
+		});
 
-	let arr;
+		it('should exist the method `sum`', function () {
+			expect(calc.sum).to.exist;
+			expect(calc.sum).to.be.a('function');
+		});
 
-	// Roda uma vez antes do bloco
-	before(function () {
+		it('should exist the method `sub`', function () {
+			expect(calc.sub).to.exist;
+			expect(calc.sub).to.be.a('function');
+		});
 
-	});
+		it('should exist the method `multi`', function () {
+			expect(calc.multi).to.exist;
+			expect(calc.multi).to.be.a('function');
+		});
 
-	// Roda uma vez após o bloco
-	after(function () {
-
-	});
-	
-	// Roda todas as vezes, antes de CADA bloco
-	beforeEach(function () {
-		arr = [1,2,3];
-	});
-
-	// Roda todas as vezes, depois de CADA bloco
-	afterEach(function () {
-
-	});
-
-	it('should have a size of 4 when push another value to the array', function () {
-		arr.push(4);
-
-		expect(arr).to.have.lengthOf(4);
+		it('should exist the method `div`', function () {
+			expect(calc.div).to.exist;
+			expect(calc.div).to.be.a('function');
+		});
 	});
 });
