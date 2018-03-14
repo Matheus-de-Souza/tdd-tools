@@ -4,8 +4,23 @@
   "description": "This project was created to test TDD Frameworks and tools",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "npm run test -- --watch"
+    "prepush": "npm run lint && npm run test:coverage",
+    "test": "cross-env NODE_ENV=test nyc node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "lint": "node_modules/.bin/eslint src/**/*.js",
+    "test:tdd": "npm run test -- --watch",
+    "test:coverage": "nyc --all npm test"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**",
+      "coverage/**"
+    ]
   },
   "repository": {
     "type": "git",
@@ -24,9 +39,17 @@
   "homepage": "https://github.com/Matheus-de-Souza/tdd-tools#readme",
   "dependencies": {},
   "devDependencies": {
+    "babel-plugin-istanbul": "^4.1.5",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
-    "eslint": "^4.18.1"
+    "cross-env": "^5.1.3",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "mocha": "^5.0.4",
+    "nyc": "^11.4.1"
   }
 }
